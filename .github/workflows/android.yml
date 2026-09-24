@@ -33,16 +33,16 @@ jobs:
           mkdir odak
           unzip -q Odak_ADHD_v0_2_Source.zip -d odak
 
-            - name: Build APK
+      - name: Fix Kotlin clash
         run: |
           cd odak
-
-          # Kotlin setCapacity çakışmasını düzelt
           sed -i 's/fun setCapacity(value: Capacity)/fun updateCapacity(value: Capacity)/' app/src/main/java/com/odak/app/ui/AppState.kt
           sed -i 's/appState.setCapacity(/appState.updateCapacity(/g' app/src/main/java/com/odak/app/ui/screens/TodayScreen.kt
 
+      - name: Build APK
+        run: |
+          cd odak
           gradle assembleDebug --stacktrace
-    
 
       - uses: actions/upload-artifact@v4
         with:

@@ -1,4 +1,4 @@
-name: Android APK
+name: Build Odak v0.2 APK
 
 on:
   workflow_dispatch:
@@ -17,8 +17,7 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v4
+      - uses: android-actions/setup-android@v4
         with:
           packages: "platform-tools"
 
@@ -29,10 +28,17 @@ jobs:
         with:
           gradle-version: "8.9"
 
+      - name: Extract Odak
+        run: |
+          mkdir odak
+          unzip -q Odak_ADHD_v0_2_Source.zip -d odak
+
       - name: Build APK
-        run: gradle assembleDebug --stacktrace
+        run: |
+          cd odak
+          gradle assembleDebug --stacktrace
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Odak3-V2-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          name: Odak-v0.2-debug-apk
+          path: odak/app/build/outputs/apk/debug/app-debug.apk

@@ -1,11 +1,22 @@
-# Odak 3 — Android
+# Odak 3 Android — V2
 
-ADHD-dostu öz-yönetim ve CBT destek uygulaması.
+ADHD-dostu kişisel yönetim + CBT destek uygulaması.
 
-## APK oluşturma
-Bu repo GitHub'a yüklendiğinde `.github/workflows/android.yml` otomatik olarak debug APK derler.
+## V2 yenilikleri
+- Brain Dump → Bugün / Sonra / Sil
+- Minimum Gün modu (“Bugün kötü gidiyor”)
+- Body Double odak oturumu
+- Görsel zaman ilerleme çubuğu
+- Sabah / öğleden sonra / akşam blokları
+- Bitmeyen görevleri yarına taşı / sonraya bırak / gereksiz olarak bırak
+- Kişisel ödül / XP sistemi
+- 5 dakikalık ADHD + CBT mikro araçları
+- Akıllı görev parçalama
 
-GitHub > Actions > Android APK > son başarılı çalışma > Artifacts > `Odak3-debug-apk`
+## Korunan özellikler
+Günün 3 hedefi, ilk fiziksel adım, kurtarma modu, rutinler, ruh hali,
+odak zamanlayıcısı, dikkat park alanı, CBT düşünce kaydı, haftalık değerlendirme.
 
-## Güvenlik
-Odak 3 tıbbi tanı veya tedavi sağlamaz. İlaç/doz/saat değişikliklerini reçeteleyen hekimle görüşün.
+## Sağlık notu
+Bu uygulama tıbbi tanı veya tedavi sağlamaz; ilaç, doz veya kullanım saati önermez.
+İlaç değişiklikleri reçeteleyen hekimle görüşülmelidir.
